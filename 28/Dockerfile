@@ -1,4 +1,3 @@
-# gradle:6.2-jdk8
 FROM gradle:5.6-jdk8
 
 # Install Build Essentials for NDK builds
@@ -22,7 +21,7 @@ RUN curl https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_
 
 # Install Android Platforms, Build Tool and Common Extras
 RUN mkdir /root/.android \
- && echo '### User Sources for Android SDK Manager' > /root/.android/repositories.cfg \
+ && touch /root/.android/repositories.cfg \
  && sdkmanager --update \
  && sdkmanager \
     "platforms;android-28" \
@@ -41,7 +40,7 @@ RUN mkdir /root/.android \
 
 # Install Kotlin
 RUN curl  "https://get.sdkman.io" -o sdkman.sh \
- && bash -c "bash ./sdkman.sh > /dev/null && source ~/.sdkman/bin/sdkman-init.sh && sdk install kotlin" \
+ && bash -c "bash ./sdkman.sh && source ~/.sdkman/bin/sdkman-init.sh && sdk install kotlin" \
  && rm sdkman.sh
 
 # Default command line is a gradle build

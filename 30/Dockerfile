@@ -23,15 +23,12 @@ RUN curl https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_
 RUN mkdir /root/.android \
  && touch /root/.android/repositories.cfg \
  && sdkmanager --update \
- && sdkmanager \
+ && yes | sdkmanager \
+    "platforms;android-R" \
     "platforms;android-29" \
-    "platforms;android-28" \
     "platform-tools" \
+    "build-tools;30.0.0-rc1" \
     "build-tools;29.0.3" \
-    "build-tools;29.0.2" \
-    "build-tools;29.0.1" \
-    "build-tools;29.0.0" \
-    "build-tools;28.0.3" \
     "patcher;v4" \
     "tools" \
     "extras;android;m2repository" \

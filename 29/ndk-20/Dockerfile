@@ -1,0 +1,8 @@
+FROM smithmicro/android-build:29
+
+ENV ANDROID_NDK_VERSION=20.1.5948944
+ENV ANDROID_NDK_HOME=$ANDROID_HOME/ndk/$ANDROID_NDK_VERSION
+
+# Install the NDK
+RUN sdkmanager \
+    "ndk;$ANDROID_NDK_VERSION"

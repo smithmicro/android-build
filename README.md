@@ -2,7 +2,7 @@
 Dockerized Android Build image.  Optional versions with the NDK installed.
 
 ## Architecture
-These Android build images are dereived from the official [gradle](https://hub.docker.com/_/gradle) image.  We also use the `gradle:5.6-jdk8` image which includes JDK 8.  We can move to `gradle:6.2-jdk8` when needed.
+These Android build images are dereived from the official [gradle](https://hub.docker.com/_/gradle) image.  We also use the `gradle:5.6-jdk8` image which includes JDK 8.
 
 The main software that is added to the non-NDK versions:
 * Android SDK Tools - provides the `sdkmanager` command line tool
@@ -18,14 +18,14 @@ Example, the `android-build:29` image contains:
 ## Examples
 Run the following command in your Android project.  The directory should be same as your `build.gradle` file.
 ```
-docker run --rm -v ${pwd}:/home/gradle/ smithmicro/android-build:29
+docker run --rm -v ${PWD}:/home/gradle/ smithmicro/android-build:29
 ```
 
 The default command of this image is `gradle build`, but you can run others.
 
 Run a gradle clean:
 ```
-docker run --rm -v ${pwd}:/home/gradle/ smithmicro/android-build:29 gradle clean
+docker run --rm -v ${PWD}:/home/gradle/ smithmicro/android-build:29 gradle clean
 ```
 
 Show installed sdkmanager packages:

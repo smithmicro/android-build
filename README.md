@@ -30,7 +30,7 @@ docker run --rm -v ${PWD}:/home/gradle/ smithmicro/android-build:29 gradle clean
 
 Show installed sdkmanager packages:
 ```
-docker run --rm smithmicro/android-build:29-ndk-21 sdkmanager --list
+docker run --rm smithmicro/android-build:29-ndk21 sdkmanager --list
 ```
 
 ## Build

@@ -2,7 +2,7 @@
 Dockerized Android Build image.  Optional versions with the NDK installed.
 
 ## Architecture
-These Android build images are dereived from the official [gradle](https://hub.docker.com/_/gradle) image.  We also use the `gradle:5.6-jdk8` image which includes JDK 8.
+These Android build images are dereived from the official [gradle](https://hub.docker.com/_/gradle) image.  We also use the `gradle:5.6-jdk8` image which includes JDK 8.  This gradle version is consistant with the version currently used by the latest version of Android Studio.
 
 The main software that is added to the non-NDK versions:
 * Android SDK Tools - provides the `sdkmanager` command line tool
@@ -10,7 +10,7 @@ The main software that is added to the non-NDK versions:
 
 The sdkmanager packages that are installed are generally the current version and the previous version.  Check the Dockerfile for more details.
 
-Example, the `android-build:29` image contains:
+For example, the `android-build:29` image contains:
 * android-29 and android-28
 * build-tools 29.0.3-29.0.0
 * build-tools 28.0.3
@@ -37,6 +37,17 @@ docker run --rm smithmicro/android-build:29-ndk21 sdkmanager --list
 To build all images containers in this repo, run:
 ```
 ./build.sh
+```
+
+## Extenison
+If you need an additional tools inside the image, such as Ant, create your own Dockerfile to extend `android-build`:
+```
+FROM smithmicro/android-build:29
+
+# Install Ant and Ant Tasks
+RUN apt-get -y install \
+    ant \
+    ant-contrib
 ```
 
 ## Inspiration

@@ -9,7 +9,7 @@ RUN apt-get -y update && apt-get -y install \
 
 # From https://developer.android.com/studio/index.html
 ENV ANDROID_SDK_TOOLS_VERSION=4333796
-ENV ANDROID_BUILD_TOOLS_VERSION=30.0.0-rc2
+ENV ANDROID_BUILD_TOOLS_VERSION=30.0.0-rc3
 ENV ANDROID_HOME=/opt/android-sdk
 ENV PATH="$PATH:$ANDROID_HOME/tools/bin:$ANDROID_HOME/build-tools/$ANDROID_BUILD_TOOLS_VERSION"
 

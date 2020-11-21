@@ -39,6 +39,17 @@ To build all images containers in this repo, run:
 ./build.sh
 ```
 
+## NDK Versions
+These images include the following NDK versions:
+|Image|NDK Version|
+|---|----|
+|:30-ndk21, :29-ndk21, :28-ndk21|21.3.6528147|
+|:29-ndk20, :28-ndk20|20.1.5948944|
+
+You can check to see if there are newer NDK versions here:
+
+https://developer.android.com/ndk/downloads
+
 ## Extenison
 If you need an additional tools inside the image, such as Ant, create your own Dockerfile to extend `android-build`:
 ```

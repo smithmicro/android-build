@@ -66,9 +66,15 @@ A great article from Medium showing the foundations this project was built on:
 
 https://medium.com/@AndreSand/building-android-with-docker-8dbf717f54d4
 
+## Android References
+Command-Line Tools Location
+https://developer.android.com/studio/command-line#tools-sdk
+
+Android SDK environment variables
+https://developer.android.com/studio/command-line/variables#envar
+
 ## Licenses
 This project is licensed under Apache 2.0.
 
-Note that this Docker image automatically accepts two Google licenses in order to automate the installation.  By using this image, you need to accept the Terms and Conditions of these two licenses:
+Note that this Docker image automatically accepts two Google licenses in order to automate the installation.  By using this image, you need to accept the Terms and Conditions of this license:
 * Android Software Development Kit License Agreement (android-sdk-license)
-* Android SDK Preview License Agreement (android-sdk-preview-license)

@@ -7,8 +7,8 @@ RUN apt-get -y update && apt-get -y install \
     file \
     zip
 
-ENV ANDROID_SDK_TOOLS_VERSION=8512546_latest
-ENV ANDROID_BUILD_TOOLS_VERSION=30.0.2
+ENV ANDROID_SDK_TOOLS_VERSION=9477386_latest
+ENV ANDROID_BUILD_TOOLS_VERSION=33.0.2
 ENV ANDROID_SDK_ROOT=/opt/android-sdk
 ENV PATH="$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/build-tools/$ANDROID_BUILD_TOOLS_VERSION"
 
@@ -27,10 +27,8 @@ RUN mkdir /root/.android \
  && touch /root/.android/repositories.cfg \
  && sdkmanager --update \
  && sdkmanager \
-    "platforms;android-31" \
-    "platforms;android-30" \
-    "build-tools;31.0.0" \
-    "build-tools;30.0.2" \
+    "platforms;android-33" \
+    "build-tools;33.0.2" \
     "extras;android;m2repository" \
     "extras;google;m2repository" \
     "extras;google;google_play_services" \

@@ -2,7 +2,7 @@
 Dockerized Android Build image.  Optional versions with the NDK installed.
 
 ## Architecture
-These Android build images are dereived from the official [gradle](https://hub.docker.com/_/gradle) image.  We use the `gradle:6.7-jdk11` image in the latest build which includes JDK 11.  This gradle version is consistant with the version currently used by the latest version of Android Studio.  Older images still use `gradle:6.5-jdk8`.
+These Android build images are dereived from the official [gradle](https://hub.docker.com/_/gradle) image.  We use the `gradle:7.4-jdk11` image in the latest build which includes JDK 11.  This gradle version is consistant with the version currently used by the latest version of Android Studio.  Older images still use `gradle:6.5-jdk8`.
 
 The main software that is added to the non-NDK versions:
 * Android SDK Tools - provides the `sdkmanager` command line tool
@@ -13,19 +13,19 @@ The sdkmanager packages that are installed are generally the current version and
 ## Examples
 Run the following command in your Android project.  The directory should be same as your `build.gradle` file.
 ```
-docker run --rm -v ${PWD}:/home/gradle/ smithmicro/android-build:31
+docker run --rm -v ${PWD}:/home/gradle/ smithmicro/android-build:33
 ```
 
 The default command of this image is `gradle build`, but you can run others.
 
 Run a gradle clean:
 ```
-docker run --rm -v ${PWD}:/home/gradle/ smithmicro/android-build:31 gradle clean
+docker run --rm -v ${PWD}:/home/gradle/ smithmicro/android-build:33 gradle clean
 ```
 
 Show installed sdkmanager packages:
 ```
-docker run --rm smithmicro/android-build:31-ndk21 sdkmanager --list
+docker run --rm smithmicro/android-build:33-ndk25 sdkmanager --list
 ```
 
 ## Build
@@ -38,6 +38,10 @@ To build all images containers in this repo, run:
 These images include the following NDK versions:
 |Image|NDK Version|
 |---|----|
+|:33-ndk25|25.2.9519653|
+|:32-ndk24|24.0.8215888|
+|:32-ndk23|23.2.8568313|
+|:31-ndk22|22.1.7171670|
 |:31-ndk21|21.4.7075529|
 |:30-ndk21, :29-ndk21, :28-ndk21|21.3.6528147|
 |:29-ndk20, :28-ndk20|20.1.5948944|
@@ -49,7 +53,7 @@ https://developer.android.com/ndk/downloads
 ## Extenison
 If you need an additional tools inside the image, such as Ant, create your own Dockerfile to extend `android-build`:
 ```
-FROM smithmicro/android-build:31
+FROM smithmicro/android-build:33
 
 # Install Ant and Ant Tasks
 RUN apt-get -y install \

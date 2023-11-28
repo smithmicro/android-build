@@ -1,4 +1,4 @@
-FROM gradle:7.4-jdk11
+FROM gradle:7.6-jdk17
 
 # Install Build Essentials for NDK builds
 RUN apt-get -y update && apt-get -y install \
@@ -7,8 +7,8 @@ RUN apt-get -y update && apt-get -y install \
     file \
     zip
 
-ENV ANDROID_SDK_TOOLS_VERSION=9477386_latest
-ENV ANDROID_BUILD_TOOLS_VERSION=34.0.0
+ENV ANDROID_SDK_TOOLS_VERSION=10406996_latest
+ENV ANDROID_BUILD_TOOLS_VERSION=34.0.0-rc3
 ENV ANDROID_SDK_ROOT=/opt/android-sdk
 ENV PATH="$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/build-tools/$ANDROID_BUILD_TOOLS_VERSION"
 

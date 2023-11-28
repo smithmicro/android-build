@@ -13,19 +13,19 @@ The sdkmanager packages that are installed are generally the current version and
 ## Examples
 Run the following command in your Android project.  The directory should be same as your `build.gradle` file.
 ```
-docker run --rm -v ${PWD}:/home/gradle/ smithmicro/android-build:33
+docker run --rm -v ${PWD}:/home/gradle/ smithmicro/android-build:34
 ```
 
 The default command of this image is `gradle build`, but you can run others.
 
 Run a gradle clean:
 ```
-docker run --rm -v ${PWD}:/home/gradle/ smithmicro/android-build:33 gradle clean
+docker run --rm -v ${PWD}:/home/gradle/ smithmicro/android-build:34 gradle clean
 ```
 
 Show installed sdkmanager packages:
 ```
-docker run --rm smithmicro/android-build:33-ndk25 sdkmanager --list
+docker run --rm smithmicro/android-build:34-ndk26 sdkmanager --list
 ```
 
 ## Build
@@ -38,6 +38,7 @@ To build all images containers in this repo, run:
 These images include the following NDK versions:
 |Image|NDK Version|
 |---|----|
+|:34-ndk26|26.1.10909125|
 |:33-ndk25|25.2.9519653|
 |:32-ndk24|24.0.8215888|
 |:32-ndk23|23.2.8568313|
@@ -53,7 +54,7 @@ https://developer.android.com/ndk/downloads
 ## Extenison
 If you need an additional tools inside the image, such as Ant, create your own Dockerfile to extend `android-build`:
 ```
-FROM smithmicro/android-build:33
+FROM smithmicro/android-build:34
 
 # Install Ant and Ant Tasks
 RUN apt-get -y install \

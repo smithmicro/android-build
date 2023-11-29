@@ -1,4 +1,4 @@
-FROM gradle:8.1-jdk17
+FROM gradle:7.5-jdk17
 
 # Install Build Essentials for NDK builds
 RUN apt-get -y update && apt-get -y install \

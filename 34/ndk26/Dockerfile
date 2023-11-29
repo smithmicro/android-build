@@ -1,4 +1,4 @@
-FROM smithmicro/android-build:34
+FROM smithmicro/android-build:34-gradle7.5
 
 ENV ANDROID_NDK_VERSION=26.1.10909125
 

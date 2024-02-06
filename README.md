@@ -10,6 +10,8 @@ The main software that is added to the non-NDK versions:
 
 The sdkmanager packages that are installed are generally the current version and the previous version.  Check the Dockerfile for more details.
 
+**Note:** From February 7th 2024, the build images are running as the unprivileged `gradle` user instead of `root`, if you encounter a build error saying "_Failed to install the following SDK components: ..._" then it means that the image is missing a component required by your Android build; send a PR to add this dependency or select another another container image.
+
 ## Examples
 Run the following command in your Android project.  The directory should be same as your `build.gradle` file.
 ```

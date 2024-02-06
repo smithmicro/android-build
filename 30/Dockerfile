@@ -42,5 +42,7 @@ RUN curl "https://get.sdkman.io" -o sdkman.sh \
  && bash -c "bash ./sdkman.sh && source ~/.sdkman/bin/sdkman-init.sh && sdk install kotlin" \
  && rm sdkman.sh
 
+USER gradle
+
 # Default command line is a gradle build
 CMD [ "gradle", "build" ]

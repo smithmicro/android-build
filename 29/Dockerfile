@@ -36,7 +36,8 @@ RUN mkdir /root/.android \
     "extras;google;m2repository" \
     "extras;google;google_play_services" \
  && sdkmanager --uninstall \
-    "emulator"
+    "emulator" \
+ && chown -vR gradle:gradle /opt/android-sdk
 
 # Install Kotlin
 RUN curl "https://get.sdkman.io" -o sdkman.sh \

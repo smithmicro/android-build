@@ -10,8 +10,6 @@ The main software that is added to the non-NDK versions:
 
 The sdkmanager packages that are installed are generally the current version and the previous version.  Check the Dockerfile for more details.
 
-**Note:** From February 7th 2024, the build images are running as the unprivileged `gradle` user instead of `root`, if you encounter permission problems due to this change, send a PR to add the dependency you need or select a image variant that already have it included.
-
 ## Examples
 Run the following command in your Android project.  The directory should be same as your `build.gradle` file.
 ```

@@ -37,7 +37,8 @@ RUN mkdir /root/.android \
     "tools" \
     "extras;android;m2repository" \
     "extras;google;m2repository" \
-    "extras;google;google_play_services"
+    "extras;google;google_play_services" \
+ && chown -vR gradle:gradle /opt/android-sdk
 
 # Install Kotlin
 RUN curl "https://get.sdkman.io" -o sdkman.sh \

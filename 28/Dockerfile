@@ -33,7 +33,6 @@ RUN mkdir /root/.android \
     "build-tools;28.0.1" \
     "build-tools;28.0.0" \
     "build-tools;27.0.3" \
-    "patcher;v4" \
     "tools" \
     "extras;android;m2repository" \
     "extras;google;m2repository" \

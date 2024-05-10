@@ -33,12 +33,15 @@ RUN mkdir /root/.android \
     "extras;google;m2repository" \
     "extras;google;google_play_services" \
  && sdkmanager --uninstall \
-    "emulator"
+    "emulator" \
+ && chown -vR gradle:gradle /opt/android-sdk
 
 # Install Kotlin
 RUN curl "https://get.sdkman.io" -o sdkman.sh \
  && bash -c "bash ./sdkman.sh && source ~/.sdkman/bin/sdkman-init.sh && sdk install kotlin" \
  && rm sdkman.sh
+
+USER gradle
 
 # Default command line is a gradle build
 CMD [ "gradle", "build" ]

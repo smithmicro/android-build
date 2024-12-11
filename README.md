@@ -1,5 +1,5 @@
 # android-build
-Dockerized Android Build image.  Optional versions with the NDK installed.
+Dockerized Android Build image, [`smithmicro/android-build`](https://hub.docker.com/r/smithmicro/android-build).  Optional versions with the NDK installed.
 
 ## Architecture
 These Android build images are dereived from the official [gradle](https://hub.docker.com/_/gradle) image.  We use the `gradle:8.2-jdk17` image in the latest build which includes JDK 17.  This gradle version is consistant with the version currently used by the latest version of Android Studio.  Older images use `gradle:7.4-jdk11` and `gradle:6.5-jdk8`.

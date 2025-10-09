@@ -2,7 +2,7 @@
 Dockerized Android Build image, [`smithmicro/android-build`](https://hub.docker.com/r/smithmicro/android-build).  Optional versions with the NDK installed.
 
 ## Architecture
-These Android build images are dereived from the official [gradle](https://hub.docker.com/_/gradle) image.  We use the `gradle:8.2-jdk17` image in the latest build which includes JDK 17.  This gradle version is consistant with the version currently used by the latest version of Android Studio.  Older images use `gradle:7.4-jdk11` and `gradle:6.5-jdk8`.
+These Android build images are dereived from the official [gradle](https://hub.docker.com/_/gradle) image.  We use the `gradle:8.13-jdk17` image in the latest build which includes JDK 17.  This gradle version is consistant with the version currently used by the latest version of Android Studio.  Older images use `gradle:7.4-jdk11` and `gradle:6.5-jdk8`.
 
 The main software that is added to the non-NDK versions:
 * Android SDK Tools - provides the `sdkmanager` command line tool
@@ -13,19 +13,19 @@ The sdkmanager packages that are installed are generally the current version and
 ## Examples
 Run the following command in your Android project.  The directory should be same as your `build.gradle` file.
 ```
-docker run --rm -v ${PWD}:/home/gradle/ smithmicro/android-build:34
+docker run --rm -v ${PWD}:/home/gradle/ smithmicro/android-build:36
 ```
 
 The default command of this image is `gradle build`, but you can run others.
 
 Run a gradle clean:
 ```
-docker run --rm -v ${PWD}:/home/gradle/ smithmicro/android-build:34 gradle clean
+docker run --rm -v ${PWD}:/home/gradle/ smithmicro/android-build:36 gradle clean
 ```
 
 Show installed sdkmanager packages:
 ```
-docker run --rm smithmicro/android-build:34-ndk26 sdkmanager --list
+docker run --rm smithmicro/android-build:36-ndk27 sdkmanager --list
 ```
 
 ## Build
@@ -38,6 +38,8 @@ To build all images containers in this repo, run:
 These images include the following NDK versions:
 |Image|NDK Version|
 |---|----|
+|:36-ndk27|27.2.12479018|
+|:35-ndk27|27.2.12479018|
 |:34-ndk26|26.1.10909125|
 |:33-ndk25|25.2.9519653|
 |:32-ndk24|24.0.8215888|

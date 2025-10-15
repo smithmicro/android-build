@@ -2,6 +2,10 @@
 
 set -e
 
+# Android 36
+docker build 36 -t smithmicro/android-build:36
+docker build 36/ndk27 -t smithmicro/android-build:36-ndk27
+
 # Android 35
 docker build 35 -t smithmicro/android-build:35
 docker build 35/ndk27 -t smithmicro/android-build:35-ndk27
